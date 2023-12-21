@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--  Butona basıldığında inputtan aldığı değeri 1.8 ile çarpıp alert olarak ekrana yazacak.
+    Eğer inputa kullanıcı string girmişse ekrana bu değer geçersiz yazsın. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <input type="text" id="num" placeholder="Enter a number...">
+    <button onclick="multiplyByPercent()">Çarp</button>
+   <script>
+    
+   
+    function multiplyByPercent(percent=1.8) {
+        var num = document.getElementById("num").value;
+        if (isNaN(num)) {
+            alert("Invalid input. Please make sure that you have entered a numeric expression")
+        } else {
+            var result = num * percent
+            alert("Result is " + result)
+        }
+        
+    }
+
+
+   </script>
+
+
+</body>
+</html>

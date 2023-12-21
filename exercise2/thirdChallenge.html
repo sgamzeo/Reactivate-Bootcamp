@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Ekranda 2 adet input(number1, number2) ve 4 adet buton(toplama, çıkarma, çarpma, bölme) var. Butona tıklayınca mevcut işlemi yapıp ekrana yazdırsın.
+    ** virgüldensonra max 5 basamak göster -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    
+    <input type="text" id="num1" placeholder="Sayı giriniz..">
+    <input type="text" id="num2" placeholder="Sayı giriniz...">
+
+    <button onclick="islemYap('topla')">TOPLA</button>
+    <button onclick="islemYap('cikar')">ÇIKAR</button>
+    <button onclick="islemYap('carp')">ÇARP</button>
+    <button onclick="islemYap('bol')">BÖL</button>
+
+    <p id="sonuc"></p>
+
+
+   <script>
+
+
+        
+
+        function islemYap(islem) {
+            var num1 = parseFloat(document.getElementById("num1").value)
+            var num2 = parseFloat(document.getElementById("num2").value)
+            
+            if (!isNaN(num1) && !isNaN(num2)) {
+                switch (islem) {
+
+                    case "topla":
+                        sonuc =  num1 + num2;
+                        break;
+                    
+                    case "cikar":
+                        sonuc =  num1 - num2;
+                        break;
+                    
+                    case "carp":
+                        sonuc =  num1 * num2;
+                        break;
+                    
+                    case "bol":
+                        if (num2 !== 0) {
+                            sonuc =  num1 / num2;
+                        }
+                        else {
+                            alert("Bir sayının sıfıra bölümü tanımsızdır.")
+                        }
+                        
+                        break;
+                    
+                    default:
+                        alert("Bir sayı girdiğinden emin ol.");
+                        break;
+                    
+                }
+                document.getElementById("sonuc").innerText = "Sonuç: " + sonuc.toFixed(5);
+
+            } else {
+                alert('Lütfen sayısal ifade girdiğinizden emin olunuz.')
+            }
+    
+
+        }
+
+
+   </script>
+
+
+</body>
+</html>
